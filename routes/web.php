@@ -14,14 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('home');
 });
 
-//new route
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('category', App\Http\Controllers\CategoryController::class);
-Route::resource('product', App\Http\Controllers\ProductController::class);
+//new Route
+
+Route::resource('category', App\Http\Controllers\CategoryController::class)->middleware('is_admin');
+Route::resource('product', App\Http\Controllers\ProductController::class)->middleware('is_admin');
+Route::resource('order', App\Http\Controllers\OrderController::class)->middleware('is_admin');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

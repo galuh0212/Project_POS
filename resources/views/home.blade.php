@@ -17,7 +17,7 @@
                         <h4>Total User</h4>
                     </div>
                     <div class="card-body">
-                        <h5>Nanti Aja</h5>
+                        <h5>{{$user}}</h5>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                         <h4>Total Product</h4>
                     </div>
                     <div class="card-body">
-                        <h5>Nanti Aja</h5>
+                        <h5>{{$product}}</h5>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         <h4>Total Categories</h4>
                     </div>
                     <div class="card-body">
-                        <h5>Nanti Aja</h5>
+                        <h5>{{$categories}}</h5>
                     </div>
                 </div>
             </div>
